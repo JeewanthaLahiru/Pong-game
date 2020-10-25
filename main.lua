@@ -17,3 +17,9 @@ function love.load()
         vsync = true
     })
 end
+
+function love.keypressed(key)
+    if key == 'escape' then 
+        love.event.quite()
+    end
+end
