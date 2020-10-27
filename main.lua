@@ -21,6 +21,8 @@ function love.load()
         resizable = false,
         vsync = true
     })
+    player1Score = 0
+    player2Score = 0
 
     player1Y = 30
     player2Y = VIRTUAL_HEIGHT - 50
@@ -37,6 +39,12 @@ function love.update(dt)
         player1Y = player1Y + -PADDLE_SPEED*dt
     elseif love.keyboard.isDown('s') then
         player1Y = player1Y + PADDLE_SPEED*dt
+    end
+
+    if love.keyboard.isDown('up') then 
+        player2Y = player2Y + -PADDLE_SPEED * dt 
+    elseif love.keyboard.isDown('down') then 
+        player2Y = player2Y + PADDLE_SPEED * dt 
     end
 end
 
